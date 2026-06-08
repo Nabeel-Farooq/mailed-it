@@ -1,16 +1,24 @@
 """
-ASGI config for email_campaign_manager project.
+ASGI configuration for the email_campaign_manager project.
 
-It exposes the ASGI callable as a module-level variable named ``application``.
+Exposes the ASGI application callable as a module-level variable named
+``application``.
 
-For more information on this file, see
+For more information, see:
 https://docs.djangoproject.com/en/4.2/howto/deployment/asgi/
 """
+
+from __future__ import annotations
 
 import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'email_campaign_manager.settings')
+# Default Django settings module for ASGI servers.
+os.environ.setdefault(
+    "DJANGO_SETTINGS_MODULE",
+    "email_campaign_manager.settings",
+)
 
+# ASGI application used by servers such as Uvicorn, Daphne, or Hypercorn.
 application = get_asgi_application()
